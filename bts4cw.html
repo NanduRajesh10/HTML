@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Support Page FAQ & Agents</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .faq-section {
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .faq-question {
+      cursor: pointer;
+      margin: 0;
+      font-weight: bold;
+    }
+    .faq-answer {
+      display: none;
+      margin: 5px 0 0 0;
+    }
+    .agent-cards {
+      display: flex;
+      gap: 20px;
+    }
+    .agent-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 240px;
+      position: relative;
+    }
+    .agent-name {
+      font-size: 1.2em;
+      margin: 0;
+    }
+    .agent-role {
+      color: #666;
+      margin: 5px 0 15px 0;
+    }
+    .dropdown-btn {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 160px;
+      z-index: 10;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Support – Frequently Asked Questions</h1>
+
+  <div class="faq-section">
+    <div class="faq-item">
+      <p class="faq-question">What is your refund policy?</p>
+      <div class="faq-answer">
+        <p>We offer a full refund within 30 days of purchase, provided that no services have been used. After 30 days, only partial refunds are available.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <p class="faq-question">How do I change my account password?</p>
+      <div class="faq-answer">
+        <p>Go to your account settings, click on “Security”, then “Change Password”. You will need to enter your current password and your new password twice.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <p class="faq-question">Can I upgrade my plan at any time?</p>
+      <div class="faq-answer">
+        <p>Yes — you can upgrade your plan at any time from the billing section of your dashboard. The upgrade takes effect immediately and you’ll be billed proportionally for the remainder of your billing cycle.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Meet Our Support Team</h2>
+  <div class="agent-cards">
+    <div class="agent-card">
+      <p class="agent-name">Peter Parker</p>
+      <p class="agent-role">Lead Support Specialist</p>
+      <button class="dropdown-btn" onclick="toggleDropdown('dropdown1')">Quick Actions ▼</button>
+      <div id="dropdown1" class="dropdown-menu">
+        <a href="tel:+1234567890">Call</a>
+        <a href="mailto:alex.johnson@example.com">Email</a>
+        <a href="#">Message</a>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <p class="agent-name">Mary Jane</p>
+      <p class="agent-role">Customer Success Agent</p>
+      <button class="dropdown-btn" onclick="toggleDropdown('dropdown2')">Quick Actions ▼</button>
+      <div id="dropdown2" class="dropdown-menu">
+        <a href="tel:+1987654321">Call</a>
+        <a href="mailto:maria.gomez@example.com">Email</a>
+        <a href="#">Message</a>
+      </div>
+    </div>
+
+    <div class="agent-card">
+      <p class="agent-name">Wade Wilson</p>
+      <p class="agent-role">Technical Support Engineer</p>
+      <button class="dropdown-btn" onclick="toggleDropdown('dropdown3')">Quick Actions ▼</button>
+      <div id="dropdown3" class="dropdown-menu">
+        <a href="tel:+1098765432">Call</a>
+        <a href="mailto:chen.wei@example.com">Email</a>
+        <a href="#">Message</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // FAQ toggle logic
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+      question.addEventListener('click', function() {
+        const answerDiv = this.nextElementSibling;
+        answerDiv.style.display = (answerDiv.style.display === 'block' ? 'none' : 'block');
+      });
+    });
+
+    // Dropdown toggle logic for each agent card
+    function toggleDropdown(id) {
+      // First, hide all dropdowns
+      document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+        if (menu.id !== id) menu.style.display = 'none';
+      });
+      // Then toggle the target one
+      const menu = document.getElementById(id);
+      menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+    }
+
+    // Optional: click outside closes dropdown
+    document.addEventListener('click', function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+          menu.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
