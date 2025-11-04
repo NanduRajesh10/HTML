@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Explorer</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Optional styling for better visuals */
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .info-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 1.8rem;
+      color: #007bff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Travel Explorer</a>
+  </div>
+</nav>
+
+
+<div id="travelCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+ 
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="d-block w-100" alt="Maldives">
+      <div class="carousel-caption">
+        <h3>Escape to the Maldives</h3>
+        <p>Relax on pristine beaches and swim in crystal-clear waters.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" class="d-block w-100" alt="Swiss Alps">
+      <div class="carousel-caption">
+        <h3>Adventure in the Swiss Alps</h3>
+        <p>Experience breathtaking mountain trails and cozy lodges.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="d-block w-100" alt="Paris">
+      <div class="carousel-caption">
+        <h3>Discover Paris</h3>
+        <p>Explore art, culture, and romance in the City of Lights.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#travelCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#travelCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Booking Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for choosing Travel Explorer! Please review the following details before booking:</p>
+        <ul>
+          <li>Packages include 5-star accommodations and breakfast.</li>
+          <li>Complimentary airport transfers and guided tours.</li>
+          <li>Custom travel plans available upon request.</li>
+        </ul>
+        <p class="text-muted">For more details, contact our support team anytime.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success">Confirm Booking</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Click 'Book Now' to start your travel booking."></i>
+
+<!-- Bootstrap JS Bundle (includes Popper for tooltips) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<script>
+  // Enable all tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+</script>
+
+</body>
+</html>
